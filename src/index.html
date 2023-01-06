@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/output.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Press+Start+2P&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="./scripts/main.js"></script>
+
+    <title>CSE 240 - Blegh</title>
+</head>
+
+<body class="w-[100vw] p-[15px]">
+
+    <div id="header" class="w-[100%] h-[7vh]">
+        <h1 class="text-[1.2rem] font-[700] mb-0 font-press-start">CSE 240</h1>
+        <h2 class="text-[1rem] font-[500] text-[#888] font-silkscreen">Justin Selgrad | Spring 2023</h2>
+    </div>
+
+    <div id="main-body" class="w-[100%] mt-10 md:mt-20 grid place-content-center justify-items-center font-space-grotesk">
+        <div id="body-title" class="mb-10">
+            <h1 class="text-[1.5rem] md:text-[2.4rem] font-space-grotesk">How late is my submission??</h1>
+        </div>
+        <div id="body-content" class="md:w-[425px]">
+            <div id="date-pick" class="mb-10">
+                <p class="text-[1rem] md:text-[1.2rem] font-[700]">Enter assignment due date and time (MST):</p>
+                <div id="button"
+                    class="text-[0.9rem] mx-auto border-solid border-black border-[2px] w-[250px] h-[40px] grid place-content-center rounded-lg font-[500] hover:border-sky-700 hover:border-[3px]">
+                    <input type="datetime-local" id="date" onchange="newDateTime()">
+                </div>
+            </div>
+
+            <div id="output-div" class="mb-10">
+                <p class="text-[1rem] md:text-[1.2rem] font-[500]">Mountain Standard Time now:</p>
+                <p id="local-time" class="mb-4 text-[0.9rem] md:text-[1rem]"></p>
+                <p class="text-[1.1rem] md:text-[1.1rem] font-[700] mb-4">Time till due: <span id="due-calc-total" class="float-right">😱</span></p>
+                <p class="text-[1rem] md:text-[1.1rem] font-[500]">0% loss: <span id="due-calc-0" class="float-right">😱</span></p>
+                <p class="text-[1rem] md:text-[1.1rem] font-[500]">10% loss: <span id="due-calc-10" class="float-right">😱</span></p>
+                <p class="text-[1rem] md:text-[1.1rem] font-[500]">20% loss: <span id="due-calc-20" class="float-right">😱</span></p>
+                <p class="text-[1rem] md:text-[1.1rem] font-[500]">50% loss: <span id="due-calc-50" class="float-right">😱</span></p>
+                <p class="text-[1rem] md:text-[1.1rem] font-[500]">100% loss: <span id="due-calc-100" class="float-right">😱</span></p>
+            </div>
+
+            <div id="late-div" class="">
+                <p class="text-[1rem] md:text-[1.2rem] font-[700]">Late Policy Calculation</p>
+                <p class="text-[0.9rem] md:text-[1rem]">
+                    0 <= days late < 1:<span class="font-[700]"> Eligible for 100% points </span> <br>
+                    1 <= days late < 4:<span class="font-[700]"> Eligible for 90% points </span> <br>
+                    4 <= days late < 7:<span class="font-[700]"> Eligible for 80% points </span> <br>
+                    7 <= days late < 10:<span class="font-[700]"> Eligible for 50% points </span> <br>
+                    >= 10 days late:<span class="font-[700]"> Eligible for 0% points </span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="footer"></div>
+
+</body>
+
+</html>
