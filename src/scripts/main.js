@@ -94,13 +94,3 @@ function calculateLateValues(duedate) {
     document.getElementById('due-calc-100').innerText = formatter.format(new Date(loss_100));
 
 }
-
-function timedUpdate() {
-    newDateTime();
-}
-
-// function datetimeLocal() {
-//     const dt = new Date();
-//     dt.setMinutes(dt.getMinutes() - dt.getTimezoneOffset());
-//     return dt.toISOString().slice(0, 16);
-// }
