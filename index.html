@@ -14,24 +14,28 @@
     <title>CSE 240 - How late is my assignment?</title>
 </head>
 
-<body class="w-[100vw] p-[15px]">
+<body class="p-[15px]">
 
     <div id="header" class="w-[100%] h-[7vh]">
-        <h1 class="text-[1.2rem] font-[700] mb-0 font-press-start">CSE 240</h1>
+        <h1 class="text-[1.5rem] font-[500] mb-0 font-open-sans">CSE 240</h1>
         <h2 class="text-[1rem] font-[500] text-[#888] font-silkscreen">Justin Selgrad | Spring 2023</h2>
     </div>
 
-    <div id="main-body" class="w-[100%] mt-10 md:mt-20 grid place-content-center justify-items-center font-space-grotesk">
+    <div id="main-body" class="mt-10 md:mt-20 grid place-content-center justify-items-center font-open-sans">
         <div id="body-title" class="mb-10">
             <h1 class="text-[1.5rem] md:text-[2.4rem] font-space-grotesk">How late is my submission??</h1>
         </div>
         <div id="body-content" class="md:w-[425px]">
-            <div id="date-pick" class="mb-10">
-                <p class="text-[1rem] md:text-[1.2rem] font-[500]">Enter assignment due date and time (MST):</p>
-                <div id="button"
-                    class="text-[0.9rem] mx-auto border-solid border-black border-[2px] w-[250px] h-[40px] grid place-content-center rounded-lg font-[500] hover:border-sky-700 hover:border-[3px]">
+            <div id="date-pick" class="mb-10 grid justify-items-center">
+                <p class="text-[1rem] md:text-[1.2rem] font-[500]">Enter assignment due date and time (MST)</p>
+                <div class="text-[0.9rem] mx-auto border-solid border-[#666] border-[2px] w-[250px] h-[40px] grid place-content-center rounded-lg font-[500] hover:border-sky-700 hover:border-[2px]">
                     <input type="datetime-local" id="date" onchange="newDateTime()">
                 </div>
+                <div class="mt-4 text-[0.9rem] mx-auto border-solid border-black border-[2px] w-[150px] h-[40px] flex justify-center items-center rounded-full font-[500] hover:cursor-pointer hover:underline hover:decoration-solid" onclick="generateLink()">
+                    <p id="copy-button" class="mx-[5px]">Copy Link</p>
+                    <img src="./images/copy-outline.svg" alt="copy link" class="h-[25px] w-[25px] mx-[5px]">
+                </div>
+
             </div>
 
             <div id="output-div" class="mb-10">

@@ -19,12 +19,9 @@ let options = {
 
 document.addEventListener('DOMContentLoaded', function () {
     // console.log(formatter.format(new Date()));
-    const x = new Date();
-    const val = x.toISOString().split('T')[0];
-
-    var date = val + 'T23:59:59';
+    let date = getURLTime();
     document.getElementById('date').value = date;
-    deadline = new Date(date).getTime();
+    deadline = new Date(date).getTime();    
     setInterval(
         function () { calculateLateValues(deadline) }, 1000);
 });
@@ -40,6 +37,7 @@ function setDefault() {
 
 function newDateTime() {
     // console.log(document.getElementById('date').value);
+    document.getElementById('copy-button').innerHTML = 'Copy Link';
     var date = document.getElementById('date').value;
     if (date == "")
         deadline = -1;
@@ -93,4 +91,42 @@ function calculateLateValues(duedate) {
     document.getElementById('due-calc-50').innerText = formatter.format(new Date(loss_50));
     document.getElementById('due-calc-100').innerText = formatter.format(new Date(loss_100));
 
+}
+
+function getURLTime()
+{
+    const url = window.location.search;
+    let date = "";
+    if (url)
+    {
+        const params = new URLSearchParams(url);
+        try {
+            date = params.get('t');
+            const test = new Date(date);
+            console.log(test);
+            return date;
+        } catch (error) {
+            console.log("Invalid url parameter", params.get('t'));
+        }
+    }
+    return getDefaultTime();
+}
+
+function getDefaultTime(t)
+{
+    const x = new Date();
+    const val = x.toISOString().split('T')[0];
+    return val + 'T23:59:59';
+}
+
+function generateLink()
+{
+    let url = window.location.href.split("?")[0];
+    if (deadline != -1)
+    {
+        const x = new Date(deadline);
+        url += "?t=" + x.toISOString().split('.')[0];
+    }
+    navigator.clipboard.writeText(url);
+    document.getElementById('copy-button').innerHTML = 'Copied!';
 }
