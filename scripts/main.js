@@ -38,7 +38,7 @@ function setDefault() {
 function newDateTime() {
     // console.log(document.getElementById('date').value);
     document.getElementById('copy-button').innerHTML = 'Copy Link';
-    var date = document.getElementById('date').value;
+    let date = document.getElementById('date').value;
     if (date == "")
         deadline = -1;
     else
