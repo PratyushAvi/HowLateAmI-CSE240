@@ -124,7 +124,8 @@ function generateLink()
     let url = window.location.href.split("?")[0];
     if (deadline != -1)
     {
-        const x = new Date(deadline);
+        const y = new Date();
+        const x = new Date(deadline - y.getTimezoneOffset() * 60000);
         url += "?t=" + x.toISOString().split('.')[0];
     }
     navigator.clipboard.writeText(url);
