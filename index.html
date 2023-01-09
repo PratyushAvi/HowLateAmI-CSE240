@@ -27,11 +27,11 @@
         </div>
         <div id="body-content" class="md:w-[425px]">
             <div id="date-pick" class="mb-10 grid justify-items-center">
-                <p class="text-[1rem] md:text-[1.2rem] font-[500]">Enter assignment due date and time (MST)</p>
-                <div class="text-[0.9rem] mx-auto border-solid border-[#666] border-[2px] w-[250px] h-[40px] grid place-content-center rounded-lg font-[500] hover:border-sky-700 hover:border-[2px]">
-                    <input type="datetime-local" id="date" onchange="newDateTime()">
+                <p class="text-[1rem] md:text-[1.2rem] font-[500] mb-2">Enter assignment due date and time (MST)</p>
+                <div class="text-[0.9rem] text-white bg-black mx-auto border-solid border-[#000] border-[2px] w-[250px] h-[45px] grid place-content-center rounded-full font-[500] hover:shadow-xl transition ease-in-out duration-500 cursor-pointer">
+                    <input type="datetime-local" id="date" onchange="newDateTime()" class="appearance-none bg-transparent cursor-pointer">
                 </div>
-                <div class="mt-4 text-[0.9rem] mx-auto border-solid border-black border-[2px] w-[150px] h-[40px] flex justify-center items-center rounded-full font-[500] hover:cursor-pointer hover:underline hover:decoration-solid" onclick="generateLink()">
+                <div class="mt-4 text-[0.9rem] mx-auto border-solid border-black border-[2px] w-[150px] h-[40px] flex justify-center items-center rounded-full font-[500] hover:cursor-pointer hover:underline hover:decoration-solid hover:shadow-md hover:border-[#555] transition ease-in-out duration-500" onclick="generateLink()">
                     <p id="copy-button" class="mx-[5px]">Copy Link</p>
                     <img src="./images/copy-outline.svg" alt="copy link" class="h-[25px] w-[25px] mx-[5px]">
                 </div>
